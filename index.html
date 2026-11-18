@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hernija diska: operacija ili rehabilitacija? · Besplatan webinar</title>
+
+<!--
+  ============================================================
+  ŠTA DA ZAMENIŠ (obeleženo sa  ★ UREDI ):
+  1. --brand  -> tačna narandžasta sa sajta (hex)
+  2. VSL video u herou (sada placeholder) -> ubaci svoj video embed
+  3. Fotografija predavača
+  4. Link ka politici privatnosti u formi
+  5. KIT povezivanje: u <script> na dnu, polje  KIT_FORM_ACTION
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=latin,latin-ext" rel="stylesheet">
+<style>
+  :root{
+    --brand:#F1531E;        /* ★ UREDI */
+    --brand-ink:#C53F10;
+    --dark:#121214;
+    --darker:#0C0C0E;
+    --light:#F4F3F0;
+    --card:#FFFFFF;
+    --ink:#16161A;
+    --muted:#6B6B72;
+    --on-dark:#ECECEC;
+    --on-dark-mut:#9A9AA2;
+    --line:#E6E3DD;
+    --line-dark:#2A2A2E;
+    --radius:12px;
+    --maxw:1060px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--light);-webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .narrow{max-width:760px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.1;font-weight:800}
+  a{color:inherit;text-decoration:none}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--brand);color:#fff;font-weight:700;font-size:16px;padding:16px 30px;border-radius:10px;border:0;cursor:pointer;transition:background .18s,transform .18s}
+  .btn:hover{background:var(--brand-ink);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.28);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);transform:none}
+  .btn-block{width:100%}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(18,18,20,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:11px;color:#fff}
+  .logo .mark{width:34px;height:34px;border-radius:8px;background:var(--brand);display:grid;place-items:center;font-weight:800;color:#fff;font-size:17px;flex:none}
+  .logo .mark-img{height:40px;width:auto;display:block;flex:none}
+  .logo b{font-size:15px;font-weight:700;letter-spacing:-.01em;display:block;line-height:1.1}
+  .logo span{font-size:11px;color:var(--on-dark-mut)}
+  .nav .btn{padding:10px 18px;font-size:14px}
+
+  /* hero */
+  .hero{background:var(--dark);color:var(--on-dark);padding:44px 0 60px}
+  .hero-banner{position:relative}
+  .hb-top{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding-bottom:0}
+  .live{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:7px}
+  .live .dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .hb-left h1{color:#fff;font-size:clamp(30px,4.3vw,48px);line-height:1.05;margin:20px 0 10px}
+  .hb-left h1 .hl{color:var(--brand)}
+  .hb-sub{color:#fff;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .hb-lead{color:var(--on-dark-mut);font-size:16px;margin-top:14px;max-width:46ch}
+  .hb-right{position:relative;z-index:1}
+  .hb-card{position:relative;z-index:2;margin:30px auto 0;max-width:960px;background:var(--card);color:var(--ink);border-radius:18px;padding:32px 34px 34px;text-align:center;box-shadow:0 24px 60px -34px rgba(0,0,0,.5)}
+  .hb-join{font-size:clamp(15px,1.9vw,19px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);line-height:1;margin-bottom:8px}
+  .hb-webinar{font-size:clamp(42px,7.4vw,80px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);line-height:.95;margin:2px 0 22px}
+  .hb-meta{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 22px;text-align:left}
+  .hb-date{background:var(--brand);color:#fff;padding:14px 20px;display:flex;flex-direction:column;justify-content:center}
+  .hb-date b{font-size:28px;line-height:1}
+  .hb-date span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+  .hb-cell{padding:14px 22px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+  .hb-cell .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .hb-cell b{font-size:17px;color:var(--ink);margin-top:3px}
+  .hb-web{text-align:center;color:var(--on-dark-mut);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;margin-top:26px}
+  /* VSL video placeholder */
+  .vsl{position:relative;width:100%;margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line-dark);background:linear-gradient(145deg,#1b1b1f,#101013);aspect-ratio:16/9;display:grid;place-items:center}
+  .vsl .play{width:72px;height:72px;border-radius:50%;background:rgba(241,83,30,.95);display:grid;place-items:center;box-shadow:0 10px 44px rgba(241,83,30,.45)}
+  .vsl .play::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+  .vsl .tag{position:absolute;left:16px;top:16px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:6px}
+  .hero .info{font-size:15px;color:#fff;font-weight:600;margin:4px 0 26px}
+  .hero .info b{color:var(--brand)}
+
+  .meta{background:var(--darker);border-top:1px solid var(--line-dark)}
+  .meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark)}
+  .meta-cell{background:var(--darker);padding:20px 24px;text-align:center}
+  .meta-cell .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-mut)}
+  .meta-cell .v{font-size:17px;font-weight:700;color:#fff;margin-top:6px}
+
+  section.pad{padding:72px 0}
+  .sec-head{margin-bottom:34px}
+  .sec-head h2{font-size:clamp(25px,3.3vw,36px);margin-top:12px}
+  .prose p{font-size:17px;margin-bottom:16px;color:#28282e}
+  .prose p.strong{font-weight:700;color:var(--ink)}
+
+  .alt{background:var(--dark);color:var(--on-dark)}
+  .alt h2{color:#fff}
+  .alt .prose p{color:var(--on-dark-mut)}
+  .alt .prose p.strong{color:#fff}
+
+  /* get list */
+  .get{display:grid;gap:14px}
+  .get .row{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px 20px 56px;position:relative}
+  .get .row::before{content:"✓";position:absolute;left:18px;top:20px;width:26px;height:26px;border-radius:7px;background:rgba(241,83,30,.12);color:var(--brand);display:grid;place-items:center;font-weight:800;font-size:14px}
+  .get .row b{color:var(--ink)}
+  .get .row span{color:var(--muted)}
+
+  /* questions */
+  .q{counter-reset:q;display:grid;gap:16px;margin-bottom:26px}
+  .q .qi{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--line-dark);border-radius:var(--radius);padding:20px 22px}
+  .q .qi .n{counter-increment:q;flex:none;width:32px;height:32px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800}
+  .q .qi .n::before{content:counter(q)}
+  .q .qi p{color:#fff;font-size:16.5px;font-weight:500}
+  .alt .after{color:var(--on-dark-mut);font-size:17px}
+  .alt .after b{color:var(--brand)}
+
+  /* two patients */
+  .teaser{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--radius);padding:30px 32px}
+  .teaser p{font-size:17px;color:#28282e;margin-bottom:12px}
+  .teaser p:last-child{margin-bottom:0}
+
+  /* host */
+  .host{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:center}
+  .host .photo{aspect-ratio:1/1;border-radius:16px;background:linear-gradient(145deg,#ddd9d2,#efece7);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);font-size:13px;text-align:center;padding:20px}
+  .host h3{font-size:24px}
+  .host .role{color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 16px}
+  .host p{color:var(--muted);max-width:56ch;margin-bottom:10px}
+  .stats{display:flex;gap:28px;margin:18px 0 4px;flex-wrap:wrap}
+  .stats .s b{display:block;font-size:26px;color:var(--ink);line-height:1}
+  .stats .s span{font-size:12.5px;color:var(--muted)}
+
+  /* details */
+  .details{display:grid;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+  .details .d{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .details .d:last-child{border-bottom:0}
+  .details .d .dk{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:700;padding-top:2px}
+  .details .d .dv{font-size:16px;color:var(--ink)}
+  .note{font-size:15.5px;color:var(--muted);margin-bottom:12px}
+  .note b{color:var(--ink)}
+
+  /* final cta */
+  .final{background:var(--dark);color:#fff;text-align:center}
+  .final .prose p{color:var(--on-dark-mut);font-size:18px;max-width:60ch;margin:0 auto 16px}
+  .final .prose p.strong{color:#fff}
+  .final .btn{margin-top:14px}
+
+  /* form */
+  .signup{background:var(--light);border-top:1px solid var(--line)}
+  .form-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px;max-width:620px;margin:0 auto;box-shadow:0 24px 60px -36px rgba(0,0,0,.3)}
+  .form-card h3{font-size:24px;text-align:center}
+  .form-card .sub{color:var(--muted);font-size:14.5px;text-align:center;margin:6px 0 24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:15px;background:#fff;color:var(--ink);transition:border .15s}
+  .field textarea{resize:vertical;min-height:72px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(241,83,30,.12)}
+  .checkrow{display:flex;gap:11px;align-items:flex-start;margin:18px 0 20px;font-size:13px;color:var(--muted)}
+  .checkrow input{margin-top:3px;width:16px;height:16px;flex:none;accent-color:var(--brand)}
+  .form-success{display:none;text-align:center;max-width:620px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px 34px}
+  .form-success .ok{width:60px;height:60px;border-radius:50%;background:rgba(241,83,30,.12);color:var(--brand);display:grid;place-items:center;margin:0 auto 18px;font-size:28px;font-weight:800}
+  .form-success h3{font-size:26px;margin-bottom:10px}
+  .form-success .lead2{color:var(--muted);font-size:15.5px;margin-bottom:24px}
+  .steps{text-align:left;max-width:460px;margin:0 auto 20px;display:grid;gap:14px}
+  .steps .st{display:flex;gap:14px;align-items:flex-start;background:var(--light);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .steps .st .num{flex:none;width:28px;height:28px;border-radius:7px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px}
+  .steps .st b{font-size:15px}
+  .steps .st p{font-size:14px;color:var(--muted);margin-top:2px}
+  .signoff{font-weight:600;color:var(--ink);margin-top:8px}
+
+  footer{background:var(--darker);color:var(--on-dark-mut);padding:40px 0;border-top:1px solid var(--line-dark)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .foot .logo b{color:#fff}
+  .foot small{font-size:12.5px}
+
+  @media(max-width:820px){
+    .hb-top{grid-template-columns:1fr;gap:24px}
+    .hb-meta{display:flex;flex-direction:column;align-items:stretch}
+    .hb-cell{border-left:0;border-top:1px solid var(--line)}
+    .hb-card{padding:28px 20px;margin:20px auto 0;max-width:none}
+    .host{grid-template-columns:1fr;gap:28px}
+    .host .photo{max-width:200px}
+    .details .d{grid-template-columns:1fr;gap:4px}
+    .hero{padding:36px 0 48px}
+    section.pad{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><img class="mark-img" src="logo.png" alt="Rehab Akademija"><span><b>Rehab Akademija</b><span>by Novak Ilić</span></span></a>
+    <a class="btn" href="#prijava">Hoću da budem tamo</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-banner">
+    <div class="hb-top">
+      <div class="hb-left">
+        <span class="eyebrow">Fizioterapeuti, treneri i fizijatri</span>
+        <h1>Hernija diska: <span class="hl">operacija ili rehabilitacija?</span></h1>
+        <p class="hb-lead">Za sat vremena znaćeš tačno šta da odgovoriš pacijentu koji ti donese snimak i pita: „Da li moram na operaciju?“ I moći ćeš taj odgovor da odbraniš pred svakim: pacijentom, hirurgom ili kolegom.</p>
+      </div>
+
+      <div class="hb-right">
+        <!-- ★ UREDI: ovde ide VSL video (zameni ovaj blok svojim <video> ili YouTube/Vimeo embedom) -->
+        <div class="vsl">
+          <div class="play"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hb-card">
+      <div class="hb-join">Prijavi se na</div>
+      <div class="hb-webinar">Webinar</div>
+      <div class="hb-meta">
+        <div class="hb-date"><b>25</b><span>Novembar</span></div>
+        <div class="hb-cell"><span class="k">Počinje u</span><b>20:00h</b></div>
+        <div class="hb-cell"><span class="k">Predavač</span><b>Novak Ilić</b></div>
+        <div class="hb-cell"><span class="k">Platforma</span><b>Zoom · besplatno</b></div>
+      </div>
+      <div><a class="btn" href="#prijava">Hoću da budem tamo</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVO U ČEMU JE STVAR -->
+<section class="pad">
+  <div class="wrap narrow">
+    <div class="sec-head"><span class="eyebrow">Evo u čemu je stvar</span></div>
+    <div class="prose">
+      <p class="strong">Pacijent ti donese magnetnu. Piše „ekstruzija“. Pita da li mora na operaciju.</p>
+      <p>Imaš dva lako dostupna odgovora i oba te koštaju.</p>
+      <p>Kažeš „idite kod hirurga“ i izgubio si pacijenta, koji je možda mogao da se vrati u život i bez operacije.</p>
+      <p>Kažeš „ma kakva operacija“, a on za dve nedelje ne može da podigne stopalo. Tada nisi izgubio samo pacijenta.</p>
+      <p>Postoji i treći odgovor. Onaj koji stoji na najjačim studijama koje imamo i koji tačno kaže kada vodiš pacijenta sam, a kada ga šalješ dalje istog dana.</p>
+      <p class="strong">To je ono što dobijaš u sredu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ŠTA DOBIJAŠ -->
+<section class="pad alt">
+  <div class="wrap narrow">
+    <div class="sec-head"><span class="eyebrow">Šta dobijaš za 60 minuta</span></div>
+    <div class="get">
+      <div class="row"><b>Odgovor na pitanje „da li moram na operaciju?“</b> <span>koji stoji na dokazima, i rečenicu kojom ga izgovaraš pacijentu da se ne uplaši.</span></div>
+      <div class="row"><b>Kada pacijent ne sme da čeka ni dan?</b> <span>Ovo propustiš jednom i pamtiš celu karijeru.</span></div>
+      <div class="row"><b>Koji tip hernije se najčešće povuče sam?</b> <span>Pacijent se najviše plaši baš njega.</span></div>
+      <div class="row"><b>Šta se desilo sa ljudima godinu dana posle operacije i godinu dana bez nje?</b> <span>Ovaj podatak menja način na koji razgovaraš sa pacijentom.</span></div>
+      <div class="row"><b>Moja mapa:</b> <span>kako vodim pacijenta posle tog razgovora, bilo da je operisan ili ne.</span></div>
+      <div class="row"><b>Jedan tvoj slučaj, rešen uživo.</b> <span>Pošalji ga uz prijavu.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRI PITANJA -->
+<section class="pad alt" style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="sec-head"><span class="eyebrow">Tri pitanja za tebe</span></div>
+    <div class="q">
+      <div class="qi"><div class="n"></div><p>Da li bi sada, bez gledanja u knjigu, znao da kažeš kada hernija ne sme da čeka ni do sutra?</p></div>
+      <div class="qi"><div class="n"></div><p>Pacijent ti donese kontrolni snimak, a hernija se i dalje vidi. Da li to znači da mu nije bolje?</p></div>
+      <div class="qi"><div class="n"></div><p>Kad pacijent izabere operaciju, šta je tvoj posao posle nje?</p></div>
+    </div>
+    <p class="after">Ako si zastao na bar jednom, <b>vidimo se u sredu.</b></p>
+  </div>
+</section>
+
+<!-- DVA PACIJENTA -->
+<section class="pad">
+  <div class="wrap narrow">
+    <div class="sec-head"><span class="eyebrow">Dva pacijenta</span></div>
+    <div class="teaser">
+      <p>Pokazaću ti dva pacijenta iz moje klinike. Oboje sa hernijom i bolom niz nogu. Jedno je operisano, drugo nije.</p>
+      <p>Prvo ćeš ti reći kome bi preporučio operaciju. Na kraju ti pokazujem gde su oboje bili posle godinu dana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KO SAM JA -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap narrow host">
+    <!-- ★ UREDI: fotografija -->
+    <div class="photo">Fotografija<br>Novak Ilić</div>
+    <div>
+      <span class="eyebrow">Ko sam ja</span>
+      <h3 style="margin-top:12px">Novak Ilić</h3>
+      <div class="role">Fizioterapeut · Osnivač Lokomoto centra</div>
+      <div class="stats">
+        <div class="s"><b>15</b><span>godina sa pacijentima</span></div>
+        <div class="s"><b>10</b><span>godina Lokomoto Centar</span></div>
+        <div class="s"><b>7000+</b><span>klijenata</span></div>
+      </div>
+      <p>Pitanje „operacija ili rehabilitacija“ čujem skoro svaki dan. U sredu ti pokazujem kako ga ja rešavam. Sa izvorima, bez magle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KAD GDE KAKO -->
+<section class="pad alt">
+  <div class="wrap narrow">
+    <div class="sec-head"><span class="eyebrow">Kad, gde, kako</span></div>
+    <div class="details">
+      <div class="d"><div class="dk">Kad</div><div class="dv">Sreda, 25. novembar, u 20h</div></div>
+      <div class="d"><div class="dk">Gde</div><div class="dv">Zoom. Link stiže na mejl odmah posle prijave.</div></div>
+      <div class="d"><div class="dk">Trajanje</div><div class="dv">Oko sat vremena, plus 15 minuta za tvoja pitanja.</div></div>
+      <div class="d"><div class="dk">Cena</div><div class="dv">Besplatno</div></div>
+      <div class="d"><div class="dk">Za koga</div><div class="dv">Fizioterapeuti, treneri i fizijatri koji rade sa ljudima koji imaju bol u leđima.</div></div>
+    </div>
+    <p class="note" style="color:var(--on-dark-mut)"><b style="color:#fff">Nije za tebe</b> ako tražiš jednu vežbu koja leči herniju. Takva ne postoji.</p>
+    <p class="note" style="color:var(--on-dark-mut)"><b style="color:#fff">Da budem otvoren:</b> na kraju ću ukratko predstaviti praktičnu edukaciju 12. i 13. decembra, za one koji žele ovo da uvežbaju rukama. Sve pre toga je tvoje, besplatno.</p>
+  </div>
+</section>
+
+<!-- ZAVRŠNI POZIV -->
+<section class="pad final">
+  <div class="wrap narrow">
+    <div class="prose">
+      <p>Najgore što može da se desi: izgubiš sat vremena u sredu uveče.</p>
+      <p class="strong">Najbolje što može da se desi: sledećem pacijentu sa hernijom odgovoriš kao neko ko tačno zna šta radi. I on to oseti.</p>
+    </div>
+    <a class="btn" href="#prijava">Hoću da budem tamo</a>
+  </div>
+</section>
+
+<!-- FORMA -->
+<section class="pad signup" id="prijava">
+  <div class="wrap">
+    <form class="form-card" id="webinarForm" novalidate>
+      <h3>Prijava traje 20 sekundi</h3>
+      <p class="sub">Popuni i stiže ti Zoom link na mejl.</p>
+
+      <div class="field">
+        <label for="name">Ime i prezime</label>
+        <input type="text" id="name" name="fields[first_name]" placeholder="Ime i prezime" required>
+      </div>
+      <div class="field">
+        <label for="email">Mejl</label>
+        <input type="email" id="email" name="email_address" placeholder="tvoj@email.com" required>
+      </div>
+      <div class="field">
+        <label for="phone">Telefon <span style="color:var(--muted);font-weight:400">(opciono, samo za podsetnik)</span></label>
+        <input type="tel" id="phone" name="fields[phone]" placeholder="+381 6x xxx xxxx">
+      </div>
+      <div class="field">
+        <label for="prof">Čime se baviš?</label>
+        <select id="prof" name="fields[profesija]" required>
+          <option value="" disabled selected>Izaberi…</option>
+          <option>Fizioterapeut</option>
+          <option>Fizijatar</option>
+          <option>Trener</option>
+          <option>Student</option>
+          <option>Drugo</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="case">Tvoj slučaj u dve rečenice <span style="color:var(--muted);font-weight:400">(opciono, bez imena pacijenta)</span></label>
+        <textarea id="case" name="fields[slucaj]" placeholder="Ukratko opiši slučaj koji bi voleo/la da rešimo uživo."></textarea>
+      </div>
+
+      <label class="checkrow">
+        <input type="checkbox" id="consent" required>
+        <span>Pristajem da mi Rehab Akademija šalje mejlove o webinaru i edukacijama. Odjava jednim klikom. <a href="politika-privatnosti.html" style="color:var(--brand)">Politika privatnosti</a></span>
+      </label>
+
+      <button type="submit" class="btn btn-block">Prijavi me</button>
+    </form>
+
+    <!-- HVALA / POTVRDA (prikazuje se posle prijave) -->
+    <div class="form-success" id="formSuccess">
+      <div class="ok">✓</div>
+      <h3>Gotovo. Vidimo se u sredu u 20h.</h3>
+      <p class="lead2">Zoom link ti je na mejlu. Ako ga ne vidiš, proveri Promocije i Spam.</p>
+      <div class="steps">
+        <div class="st"><div class="num">1</div><div><b>Stavi termin u kalendar.</b><p>Da te podseti u sredu uveče.</p><a class="btn" style="margin-top:10px;padding:10px 18px;font-size:14px" id="calBtn" target="_blank" rel="noopener" href="#">Dodaj u kalendar</a></div></div>
+        <div class="st"><div class="num">2</div><div><b>Razmisli o jednom svom pacijentu sa bolom niz nogu.</b><p>Na kraju webinara radićeš sa njim drugačije.</p></div></div>
+      </div>
+      <p class="signoff">Novak</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#"><img class="mark-img" src="logo.png" alt="Rehab Akademija"><span><b>Rehab Akademija</b><span>by Novak Ilić</span></span></a>
+    <small>rehabakademija@gmail.com · Tabanovačka 27b, Autokomanda, Beograd</small>
+    <small>© 2026 Rehab Akademija</small>
+  </div>
+</footer>
+
+<script>
+  /* ===== Dodaj u kalendar (Google Calendar) – sreda 25.11.2026, 20h Beograd ===== */
+  (function(){
+    var start="20261125T190000Z", end="20261125T201500Z"; // 20:00–21:15 po Beogradu (CET)
+    var text=encodeURIComponent("Webinar: Hernija diska – operacija ili rehabilitacija?");
+    var det=encodeURIComponent("Zoom link stiže na mejl. Rehab Akademija by Novak Ilić.");
+    var loc=encodeURIComponent("Zoom (online)");
+    var url="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+text+"&dates="+start+"/"+end+"&details="+det+"&location="+loc;
+    var b=document.getElementById('calBtn'); if(b) b.href=url;
+  })();
+
+  /* ===== KIT (ConvertKit) POVEZIVANJE =====
+     Upiši endpoint svoje Kit forme (XXXXXXX = ID forme u Kit-u):
+       https://app.kit.com/forms/XXXXXXX/subscriptions
+     Imena polja su već usklađena sa Kit-om. */
+  const KIT_FORM_ACTION = ""; // ★ UREDI
+
+  const form=document.getElementById('webinarForm');
+  const success=document.getElementById('formSuccess');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(!document.getElementById('consent').checked){ alert('Potrebna je saglasnost za prijavu.'); return; }
+    const btn=form.querySelector('button[type=submit]');
+    btn.disabled=true; btn.textContent='Šaljem…';
+    try{
+      if(KIT_FORM_ACTION){
+        const res=await fetch(KIT_FORM_ACTION,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({email_address:form.email.value,fields:{first_name:form.name.value,phone:form.phone.value,profesija:form.prof.value,slucaj:form['case'].value}})});
+        if(!res.ok) throw new Error('Kit');
+      } else { await new Promise(r=>setTimeout(r,600)); }
+      form.style.display='none'; success.style.display='block';
+      success.scrollIntoView({behavior:'smooth',block:'center'});
+    }catch(err){ btn.disabled=false; btn.textContent='Prijavi me'; alert('Došlo je do greške. Pokušaj ponovo.'); }
+  });
+</script>
+</body>
+</html>
