@@ -85,6 +85,7 @@
   .hb-web{text-align:center;color:var(--on-dark-mut);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;margin-top:26px}
   /* VSL video placeholder */
   .vsl{position:relative;width:100%;margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line-dark);background:linear-gradient(145deg,#1b1b1f,#101013);aspect-ratio:16/9;display:grid;place-items:center}
+  .vsl iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .vsl .play{width:72px;height:72px;border-radius:50%;background:rgba(241,83,30,.95);display:grid;place-items:center;box-shadow:0 10px 44px rgba(241,83,30,.45)}
   .vsl .play::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
   .vsl .tag{position:absolute;left:16px;top:16px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:6px}
@@ -191,7 +192,7 @@
     .hb-cell{border-left:0;border-top:1px solid var(--line)}
     .hb-card{padding:28px 20px;margin:20px auto 0;max-width:none}
     .host{grid-template-columns:1fr;gap:28px}
-    .host .photo-img{max-width:220px}
+    .host .photo-img{max-width:300px;margin:0 auto;justify-self:center}
     .details .d{grid-template-columns:1fr;gap:4px}
     .hero{padding:36px 0 48px}
     section.pad{padding:52px 0}
@@ -219,9 +220,9 @@
       </div>
 
       <div class="hb-right">
-        <!-- ★ UREDI: ovde ide VSL video (zameni ovaj blok svojim <video> ili YouTube/Vimeo embedom) -->
+        <!-- VIDEO: YouTube embed (zameni ID ako se promeni) -->
         <div class="vsl">
-          <div class="play"></div>
+          <iframe src="https://www.youtube-nocookie.com/embed/Y9VCdNCz2Ks?rel=0" title="Webinar: Hernija diska" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -357,7 +358,7 @@
         <input type="email" id="email" name="email_address" placeholder="tvoj@email.com" required>
       </div>
       <div class="field">
-        <label for="phone">Telefon <span style="color:var(--muted);font-weight:400">(za podsetnik)</span></label>
+        <label for="phone">Telefon</label>
         <input type="tel" id="phone" name="fields[phone]" placeholder="+381 6x xxx xxxx" required>
       </div>
       <div class="field">
@@ -422,7 +423,7 @@
      Upiši endpoint svoje Kit forme (XXXXXXX = ID forme u Kit-u):
        https://app.kit.com/forms/XXXXXXX/subscriptions
      Imena polja su već usklađena sa Kit-om. */
-  const KIT_FORM_ACTION = ""; // ★ UREDI
+  const KIT_FORM_ACTION = "https://app.kit.com/forms/10212801/subscriptions";
 
   const form=document.getElementById('webinarForm');
   const success=document.getElementById('formSuccess');
