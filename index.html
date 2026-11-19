@@ -102,6 +102,8 @@
   .sec-head h2{font-size:clamp(25px,3.3vw,36px);margin-top:12px}
   .prose p{font-size:17px;margin-bottom:16px;color:#28282e}
   .prose p.strong{font-weight:700;color:var(--ink)}
+  .prose p.strong:first-child{margin-bottom:28px}
+  .prose p.callout{background:rgba(241,83,30,.07);border-left:4px solid var(--brand);border-radius:0 10px 10px 0;padding:18px 22px;font-size:18px;font-weight:600;color:var(--ink);margin:10px 0 18px}
 
   .alt{background:var(--dark);color:var(--on-dark)}
   .alt h2{color:#fff}
@@ -130,14 +132,14 @@
   .teaser p:last-child{margin-bottom:0}
 
   /* host */
-  .host{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:center}
-  .host .photo{aspect-ratio:1/1;border-radius:16px;background:linear-gradient(145deg,#ddd9d2,#efece7);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);font-size:13px;text-align:center;padding:20px}
+  .host{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center}
+  .host .photo-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:18px;display:block;box-shadow:0 26px 54px -26px rgba(0,0,0,.4)}
   .host h3{font-size:24px}
   .host .role{color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 16px}
   .host p{color:var(--muted);max-width:56ch;margin-bottom:10px}
-  .stats{display:flex;gap:28px;margin:18px 0 4px;flex-wrap:wrap}
-  .stats .s b{display:block;font-size:26px;color:var(--ink);line-height:1}
-  .stats .s span{font-size:12.5px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;margin:22px 0 4px;max-width:440px}
+  .stats .s b{display:block;font-size:30px;color:var(--brand);line-height:1}
+  .stats .s span{display:block;margin-top:6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 
   /* details */
   .details{display:grid;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
@@ -153,6 +155,7 @@
   .final .prose p{color:var(--on-dark-mut);font-size:18px;max-width:60ch;margin:0 auto 16px}
   .final .prose p.strong{color:#fff}
   .final .btn{margin-top:14px}
+  .top-rule{height:2px;width:120px;background:var(--brand);margin:0 auto 30px;border-radius:2px}
 
   /* form */
   .signup{background:var(--light);border-top:1px solid var(--line)}
@@ -188,7 +191,7 @@
     .hb-cell{border-left:0;border-top:1px solid var(--line)}
     .hb-card{padding:28px 20px;margin:20px auto 0;max-width:none}
     .host{grid-template-columns:1fr;gap:28px}
-    .host .photo{max-width:200px}
+    .host .photo-img{max-width:220px}
     .details .d{grid-template-columns:1fr;gap:4px}
     .hero{padding:36px 0 48px}
     section.pad{padding:52px 0}
@@ -201,7 +204,7 @@
 <header>
   <div class="wrap nav">
     <a class="logo" href="#"><img class="mark-img" src="logo.png" alt="Rehab Akademija"><span><b>Rehab Akademija</b><span>by Novak Ilić</span></span></a>
-    <a class="btn" href="#prijava">Hoću da budem tamo</a>
+    <a class="btn" href="#prijava">Prijavi se na webinar</a>
   </div>
 </header>
 
@@ -212,7 +215,7 @@
       <div class="hb-left">
         <span class="eyebrow">Fizioterapeuti, treneri i fizijatri</span>
         <h1>Hernija diska: <span class="hl">operacija ili rehabilitacija?</span></h1>
-        <p class="hb-lead">Za sat vremena znaćeš tačno šta da odgovoriš pacijentu koji ti donese snimak i pita: „Da li moram na operaciju?“ I moći ćeš taj odgovor da odbraniš pred svakim: pacijentom, hirurgom ili kolegom.</p>
+        <p class="hb-lead">Za sat vremena razumećeš kako da odgovoriš pacijentu koji ti donese snimak i pita: „Da li moram na operaciju?“ I kako da svoju procenu jasno obrazložiš pacijentu, hirurgu ili kolegi.</p>
       </div>
 
       <div class="hb-right">
@@ -224,15 +227,15 @@
     </div>
 
     <div class="hb-card">
-      <div class="hb-join">Prijavi se na</div>
+      <div class="hb-join">Prijavi se na besplatni</div>
       <div class="hb-webinar">Webinar</div>
       <div class="hb-meta">
-        <div class="hb-date"><b>25</b><span>Novembar</span></div>
-        <div class="hb-cell"><span class="k">Počinje u</span><b>20:00h</b></div>
+        <div class="hb-date"><b>25.</b><span>Novembar</span></div>
+        <div class="hb-cell"><span class="k">Vreme</span><b>20:00h</b></div>
         <div class="hb-cell"><span class="k">Predavač</span><b>Novak Ilić</b></div>
-        <div class="hb-cell"><span class="k">Platforma</span><b>Zoom · besplatno</b></div>
+        <div class="hb-cell"><span class="k">Platforma</span><b>Zoom</b></div>
       </div>
-      <div><a class="btn" href="#prijava">Hoću da budem tamo</a></div>
+      <div><a class="btn" href="#prijava">Prijavi se na webinar</a></div>
     </div>
   </div>
 </section>
@@ -246,7 +249,7 @@
       <p>Imaš dva lako dostupna odgovora i oba te koštaju.</p>
       <p>Kažeš „idite kod hirurga“ i izgubio si pacijenta, koji je možda mogao da se vrati u život i bez operacije.</p>
       <p>Kažeš „ma kakva operacija“, a on za dve nedelje ne može da podigne stopalo. Tada nisi izgubio samo pacijenta.</p>
-      <p>Postoji i treći odgovor. Onaj koji stoji na najjačim studijama koje imamo i koji tačno kaže kada vodiš pacijenta sam, a kada ga šalješ dalje istog dana.</p>
+      <p class="callout">Postoji i treći odgovor. Onaj koji stoji na najjačim studijama koje imamo i koji tačno kaže kada vodiš pacijenta sam, a kada ga šalješ dalje istog dana.</p>
       <p class="strong">To je ono što dobijaš u sredu.</p>
     </div>
   </div>
@@ -285,8 +288,8 @@
   <div class="wrap narrow">
     <div class="sec-head"><span class="eyebrow">Dva pacijenta</span></div>
     <div class="teaser">
-      <p>Pokazaću ti dva pacijenta iz moje klinike. Oboje sa hernijom i bolom niz nogu. Jedno je operisano, drugo nije.</p>
-      <p>Prvo ćeš ti reći kome bi preporučio operaciju. Na kraju ti pokazujem gde su oboje bili posle godinu dana.</p>
+      <p>Pokazaću ti dva pacijenta iz moje klinike. Oboje sa hernijom i bolom niz nogu. Jedno je <strong>operisano</strong>, drugo <strong>nije</strong>.</p>
+      <p>Prvo ćeš ti reći kome bi preporučio operaciju. Na kraju ti pokazujem gde su oboje bili <strong>posle godinu dana</strong>.</p>
     </div>
   </div>
 </section>
@@ -294,53 +297,54 @@
 <!-- KO SAM JA -->
 <section class="pad" style="padding-top:0">
   <div class="wrap narrow host">
-    <!-- ★ UREDI: fotografija -->
-    <div class="photo">Fotografija<br>Novak Ilić</div>
+    <img class="photo-img" src="novak.jpg" alt="Novak Ilić, fizioterapeut">
     <div>
       <span class="eyebrow">Ko sam ja</span>
       <h3 style="margin-top:12px">Novak Ilić</h3>
       <div class="role">Fizioterapeut · Osnivač Lokomoto centra</div>
+      <p>Pitanje „operacija ili rehabilitacija“ čujem skoro svaki dan. U sredu ti pokazujem kako ga ja rešavam.</p>
       <div class="stats">
-        <div class="s"><b>15</b><span>godina sa pacijentima</span></div>
-        <div class="s"><b>10</b><span>godina Lokomoto Centar</span></div>
-        <div class="s"><b>7000+</b><span>klijenata</span></div>
+        <div class="s"><b>15+</b><span>godina iskustva</span></div>
+        <div class="s"><b>10</b><span>godina Lokomoto centra</span></div>
+        <div class="s"><b>7.000+</b><span>zadovoljnih klijenata</span></div>
+        <div class="s"><b>30+</b><span>specijalizovanih edukacija</span></div>
       </div>
-      <p>Pitanje „operacija ili rehabilitacija“ čujem skoro svaki dan. U sredu ti pokazujem kako ga ja rešavam. Sa izvorima, bez magle.</p>
     </div>
   </div>
 </section>
 
 <!-- KAD GDE KAKO -->
-<section class="pad alt">
+<section class="pad alt" style="padding-bottom:18px">
   <div class="wrap narrow">
     <div class="sec-head"><span class="eyebrow">Kad, gde, kako</span></div>
     <div class="details">
       <div class="d"><div class="dk">Kad</div><div class="dv">Sreda, 25. novembar, u 20h</div></div>
       <div class="d"><div class="dk">Gde</div><div class="dv">Zoom. Link stiže na mejl odmah posle prijave.</div></div>
-      <div class="d"><div class="dk">Trajanje</div><div class="dv">Oko sat vremena, plus 15 minuta za tvoja pitanja.</div></div>
+      <div class="d"><div class="dk">Trajanje</div><div class="dv">Sat vremena, plus 15 minuta za tvoja pitanja.</div></div>
       <div class="d"><div class="dk">Cena</div><div class="dv">Besplatno</div></div>
       <div class="d"><div class="dk">Za koga</div><div class="dv">Fizioterapeuti, treneri i fizijatri koji rade sa ljudima koji imaju bol u leđima.</div></div>
     </div>
     <p class="note" style="color:var(--on-dark-mut)"><b style="color:#fff">Nije za tebe</b> ako tražiš jednu vežbu koja leči herniju. Takva ne postoji.</p>
-    <p class="note" style="color:var(--on-dark-mut)"><b style="color:#fff">Da budem otvoren:</b> na kraju ću ukratko predstaviti praktičnu edukaciju 12. i 13. decembra, za one koji žele ovo da uvežbaju rukama. Sve pre toga je tvoje, besplatno.</p>
+    <p class="note" style="color:var(--on-dark-mut)"><b style="color:#fff">Da budem otvoren:</b> na kraju ću ukratko predstaviti praktičnu edukaciju 12. i 13. decembra, za one koji žele ovo da uvežbaju rukama. Sve pre toga je tvoje, <b style="color:#fff">besplatno</b>.</p>
   </div>
 </section>
 
 <!-- ZAVRŠNI POZIV -->
-<section class="pad final">
+<section class="pad final" style="padding-top:22px">
   <div class="wrap narrow">
+    <div class="top-rule"></div>
     <div class="prose">
       <p>Najgore što može da se desi: izgubiš sat vremena u sredu uveče.</p>
       <p class="strong">Najbolje što može da se desi: sledećem pacijentu sa hernijom odgovoriš kao neko ko tačno zna šta radi. I on to oseti.</p>
     </div>
-    <a class="btn" href="#prijava">Hoću da budem tamo</a>
+    <a class="btn" href="#prijava">Prijavi se na webinar</a>
   </div>
 </section>
 
 <!-- FORMA -->
 <section class="pad signup" id="prijava">
   <div class="wrap">
-    <form class="form-card" id="webinarForm" novalidate>
+    <form class="form-card" id="webinarForm">
       <h3>Prijava traje 20 sekundi</h3>
       <p class="sub">Popuni i stiže ti Zoom link na mejl.</p>
 
@@ -353,8 +357,8 @@
         <input type="email" id="email" name="email_address" placeholder="tvoj@email.com" required>
       </div>
       <div class="field">
-        <label for="phone">Telefon <span style="color:var(--muted);font-weight:400">(opciono, samo za podsetnik)</span></label>
-        <input type="tel" id="phone" name="fields[phone]" placeholder="+381 6x xxx xxxx">
+        <label for="phone">Telefon <span style="color:var(--muted);font-weight:400">(za podsetnik)</span></label>
+        <input type="tel" id="phone" name="fields[phone]" placeholder="+381 6x xxx xxxx" required>
       </div>
       <div class="field">
         <label for="prof">Čime se baviš?</label>
